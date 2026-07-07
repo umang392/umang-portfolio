@@ -278,7 +278,7 @@ Type 'inspect [0|1|2]' or click project cards below for telemetry maps.`,
 ----------------------------------------
 * Email: umangmishra392@gmail.com
 * Phone: +919650870928
-* LinkedIn: linkedin.com/in/umangmishra392
+* LinkedIn: https://www.linkedin.com/in/umang-mishra392/
 Type 'submit' to jump to form transmission terminal.`,
 
     resume: `Triggering download download... GET_RESUME.BIN [OK]`
