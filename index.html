@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umang Mishra | Embedded Firmware Engineer</title>
-    <meta name="description" content="Portfolio of Umang Mishra - Embedded Firmware Engineer specializing in ARM Cortex-M, RTOS, low-level device drivers, and system validation.">
-    
+    <meta name="description"
+        content="Portfolio of Umang Mishra - Embedded Firmware Engineer specializing in ARM Cortex-M, RTOS, low-level device drivers, and system validation.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,53 +41,76 @@
             }
         }
     </script>
-    
+
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
+
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="bg-base text-[#e2e8f0] font-sans overflow-x-hidden firmware-theme">
     <!-- Custom animated cursor -->
-    <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 w-6 height-6 rounded-full border border-primary mix-blend-difference z-[9999] transition-transform duration-100 ease-out -translate-x-1/2 -translate-y-1/2"></div>
-    <div id="custom-cursor-dot" class="pointer-events-none fixed top-0 left-0 w-2 height-2 rounded-full bg-primary z-[9999] -translate-x-1/2 -translate-y-1/2"></div>
+    <div id="custom-cursor"
+        class="pointer-events-none fixed top-0 left-0 w-6 height-6 rounded-full border border-primary mix-blend-difference z-[9999] transition-transform duration-100 ease-out -translate-x-1/2 -translate-y-1/2">
+    </div>
+    <div id="custom-cursor-dot"
+        class="pointer-events-none fixed top-0 left-0 w-2 height-2 rounded-full bg-primary z-[9999] -translate-x-1/2 -translate-y-1/2">
+    </div>
 
     <!-- Background Logic Waveform Canvas -->
-    <canvas id="signalCanvas" class="fixed top-0 left-0 w-screen h-screen z-[-2] pointer-events-none opacity-5"></canvas>
+    <canvas id="signalCanvas"
+        class="fixed top-0 left-0 w-screen h-screen z-[-2] pointer-events-none opacity-5"></canvas>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-[100] bg-base/80 backdrop-blur-md border-b border-borderCol py-4 transition-all duration-300">
+    <header
+        class="fixed top-0 left-0 w-full z-[100] bg-base/80 backdrop-blur-md border-b border-borderCol py-4 transition-all duration-300">
         <div class="max-w-6xl mx-auto flex items-center justify-between px-6">
             <a href="#" class="font-mono text-lg font-bold text-white tracking-tight">
                 <span class="text-primary">[</span> UM_OS_v2.0 <span class="text-primary">]</span>
             </a>
-            
-            <div class="hidden sm:flex items-center gap-2 bg-[#1f2735]/40 px-3 py-1.5 rounded-full border border-borderCol">
-                <span class="status-pulse w-2 h-2 rounded-full bg-accentGreen shadow-[0_0_8px_var(--accentGreen)]"></span>
+
+            <div
+                class="hidden sm:flex items-center gap-2 bg-[#1f2735]/40 px-3 py-1.5 rounded-full border border-borderCol">
+                <span
+                    class="status-pulse w-2 h-2 rounded-full bg-accentGreen shadow-[0_0_8px_var(--accentGreen)]"></span>
                 <span class="font-mono text-xs text-accentGreen">SYS_STATUS: ACTIVE</span>
             </div>
-            
+
             <nav class="hidden md:block">
                 <ul class="flex gap-8 list-none">
-                    <li><a href="#console-section" class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">00.</span> CONSOLE</a></li>
-                    <li><a href="#skills-section" class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">01.</span> HARDWARE_DASH</a></li>
-                    <li><a href="#projects-section" class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">02.</span> REGISTERS</a></li>
-                    <li><a href="#experience-section" class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">03.</span> TRACE_LOG</a></li>
-                    <li><a href="#contact-section" class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">04.</span> TRANSMIT</a></li>
+                    <li><a href="#console-section"
+                            class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span
+                                class="text-primary mr-1">00.</span> CONSOLE</a></li>
+                    <li><a href="#skills-section"
+                            class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span
+                                class="text-primary mr-1">01.</span> HARDWARE_DASH</a></li>
+                    <li><a href="#projects-section"
+                            class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span
+                                class="text-primary mr-1">02.</span> REGISTERS</a></li>
+                    <li><a href="#experience-section"
+                            class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span
+                                class="text-primary mr-1">03.</span> TRACE_LOG</a></li>
+                    <li><a href="#contact-section"
+                            class="font-mono text-xs text-textMuted hover:text-primary transition-colors duration-300"><span
+                                class="text-primary mr-1">04.</span> TRANSMIT</a></li>
                 </ul>
             </nav>
-            
+
             <div class="hidden sm:block">
-                <a href="#" class="btn-primary resume-btn font-mono text-xs text-primary border border-primary px-4 py-2 rounded shadow-[0_0_10px_rgba(0,240,255,0.1)] hover:bg-primary hover:text-base hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300" id="downloadResume">
+                <a href="#"
+                    class="btn-primary resume-btn font-mono text-xs text-primary border border-primary px-4 py-2 rounded shadow-[0_0_10px_rgba(0,240,255,0.1)] hover:bg-primary hover:text-base hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300"
+                    id="downloadResume">
                     <i class="fa-solid fa-download mr-1"></i> GET_RESUME.BIN
                 </a>
             </div>
-            
-            <button class="mobile-nav-toggle flex md:hidden flex-col justify-between w-6 h-4.5 bg-transparent border-none cursor-pointer z-[101]" aria-label="Toggle navigation">
+
+            <button
+                class="mobile-nav-toggle flex md:hidden flex-col justify-between w-6 h-4.5 bg-transparent border-none cursor-pointer z-[101]"
+                aria-label="Toggle navigation">
                 <span class="bar w-full h-[2px] bg-[#e2e8f0] transition-all duration-300"></span>
                 <span class="bar w-full h-[2px] bg-[#e2e8f0] transition-all duration-300"></span>
                 <span class="bar w-full h-[2px] bg-[#e2e8f0] transition-all duration-300"></span>
@@ -92,43 +119,63 @@
     </header>
 
     <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay fixed top-0 left-0 w-screen h-screen bg-base z-[99] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <div
+        class="mobile-nav-overlay fixed top-0 left-0 w-screen h-screen bg-base z-[99] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
         <nav class="mobile-nav">
             <ul class="list-none text-center">
-                <li class="my-8"><a href="#console-section" class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">00.</span> CONSOLE</a></li>
-                <li class="my-8"><a href="#skills-section" class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">01.</span> HARDWARE_DASH</a></li>
-                <li class="my-8"><a href="#projects-section" class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">02.</span> REGISTERS</a></li>
-                <li class="my-8"><a href="#experience-section" class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">03.</span> TRACE_LOG</a></li>
-                <li class="my-8"><a href="#contact-section" class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span class="text-primary mr-1">04.</span> TRANSMIT</a></li>
-                <li class="my-8"><a href="#" class="mobile-link resume-btn font-mono text-xl text-primary border border-primary px-6 py-3 rounded"><i class="fa-solid fa-download mr-1"></i> GET_RESUME.BIN</a></li>
+                <li class="my-8"><a href="#console-section"
+                        class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span
+                            class="text-primary mr-1">00.</span> CONSOLE</a></li>
+                <li class="my-8"><a href="#skills-section"
+                        class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span
+                            class="text-primary mr-1">01.</span> HARDWARE_DASH</a></li>
+                <li class="my-8"><a href="#projects-section"
+                        class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span
+                            class="text-primary mr-1">02.</span> REGISTERS</a></li>
+                <li class="my-8"><a href="#experience-section"
+                        class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span
+                            class="text-primary mr-1">03.</span> TRACE_LOG</a></li>
+                <li class="my-8"><a href="#contact-section"
+                        class="mobile-link font-mono text-2xl text-textMuted hover:text-primary transition-colors duration-300"><span
+                            class="text-primary mr-1">04.</span> TRANSMIT</a></li>
+                <li class="my-8"><a href="#"
+                        class="mobile-link resume-btn font-mono text-xl text-primary border border-primary px-6 py-3 rounded"><i
+                            class="fa-solid fa-download mr-1"></i> GET_RESUME.BIN</a></li>
             </ul>
         </nav>
     </div>
 
     <main class="max-w-6xl mx-auto px-6">
         <!-- Section 00: Hero & Interactive Console -->
-        <section id="console-section" class="min-height-screen flex flex-col justify-center border-b border-borderCol relative py-24 z-10">
+        <section id="console-section"
+            class="min-height-screen flex flex-col justify-center border-b border-borderCol relative py-24 z-10">
             <!-- Particle canvas for hero particle effect -->
             <canvas id="heroParticles" class="absolute inset-0 z-[-1] pointer-events-none opacity-40"></canvas>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="hero-intro reveal-item">
-                    <div class="sys-chip-tag inline-block font-mono text-xs text-secondary bg-secondary/10 border border-secondary px-3 py-1 rounded mb-6">
+                    <div
+                        class="sys-chip-tag inline-block font-mono text-xs text-secondary bg-secondary/10 border border-secondary px-3 py-1 rounded mb-6">
                         PROCESSOR: ARM_CORTEX_M
                     </div>
-                    <h1 class="text-5xl lg:text-6xl font-black text-white leading-tight mb-2 tracking-tight">Umang Mishra</h1>
+                    <h1 class="text-5xl lg:text-6xl font-black text-white leading-tight mb-2 tracking-tight">Umang
+                        Mishra</h1>
                     <h2 class="text-2xl font-bold text-primary mb-6">Embedded Firmware Engineer</h2>
                     <p class="text-lg text-textMuted mb-8 max-w-lg leading-relaxed">
-                        Designing robust firmware, low-level device drivers, and real-time systems. Bridging the gap between software complexity and bare-metal hardware.
+                        Designing robust firmware, low-level device drivers, and real-time systems. Bridging the gap
+                        between software complexity and bare-metal hardware.
                     </p>
-                    
+
                     <div class="quick-telemetry flex gap-6 border-y border-borderCol py-4 mb-8">
                         <div class="flex flex-col">
-                            <span class="font-mono text-[10px] text-textMuted uppercase tracking-wider">CORE_VOLTAGE</span>
-                            <span class="font-mono text-sm font-bold text-white mt-1">1.21V <span class="text-accentGreen text-xs ml-1">OK</span></span>
+                            <span
+                                class="font-mono text-[10px] text-textMuted uppercase tracking-wider">CORE_VOLTAGE</span>
+                            <span class="font-mono text-sm font-bold text-white mt-1">1.21V <span
+                                    class="text-accentGreen text-xs ml-1">OK</span></span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-mono text-[10px] text-textMuted uppercase tracking-wider">CLOCK_SPEED</span>
+                            <span
+                                class="font-mono text-[10px] text-textMuted uppercase tracking-wider">CLOCK_SPEED</span>
                             <span class="font-mono text-sm font-bold text-white mt-1">168 MHz</span>
                         </div>
                         <div class="flex flex-col">
@@ -136,40 +183,48 @@
                             <span class="font-mono text-sm font-bold text-white mt-1" id="cpu-temp">32.4°C</span>
                         </div>
                     </div>
-                    
+
                     <div class="flex flex-wrap gap-4">
-                        <a href="#skills-section" class="btn-primary font-mono text-xs text-primary border border-primary px-6 py-3.5 rounded hover:bg-primary hover:text-base transition-all duration-300">INITIALIZE_BOARD</a>
-                        <a href="#projects-section" class="btn-secondary font-mono text-xs text-textMuted border border-borderCol px-6 py-3.5 rounded hover:border-secondary hover:text-white transition-all duration-300">VIEW_REGISTERS</a>
+                        <a href="#skills-section"
+                            class="btn-primary font-mono text-xs text-primary border border-primary px-6 py-3.5 rounded hover:bg-primary hover:text-base transition-all duration-300">INITIALIZE_BOARD</a>
+                        <a href="#projects-section"
+                            class="btn-secondary font-mono text-xs text-textMuted border border-borderCol px-6 py-3.5 rounded hover:border-secondary hover:text-white transition-all duration-300">VIEW_REGISTERS</a>
                     </div>
                 </div>
 
                 <!-- Interactive Terminal Simulator -->
                 <div class="hero-console reveal-item">
                     <div class="terminal-container">
-                        <div class="terminal-header bg-[#161b22] px-4 py-2.5 flex items-center border-b border-borderCol">
+                        <div
+                            class="terminal-header bg-[#161b22] px-4 py-2.5 flex items-center border-b border-borderCol">
                             <div class="flex gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-accentRed"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
                                 <span class="w-2.5 h-2.5 rounded-full bg-accentGreen"></span>
                             </div>
                             <div class="mx-auto font-mono text-[10px] text-textMuted">umang@firmware-console:~</div>
-                            <div class="font-mono text-[10px] text-textMuted"><i class="fa-solid fa-ethernet mr-1"></i> 115200bps</div>
+                            <div class="font-mono text-[10px] text-textMuted"><i class="fa-solid fa-ethernet mr-1"></i>
+                                115200bps</div>
                         </div>
                         <div class="terminal-body p-5 flex-grow flex flex-col overflow-y-auto font-mono text-xs">
-                            <div class="terminal-output flex-grow overflow-y-auto leading-relaxed text-[#c9d1d9]" id="terminalOutput">
+                            <div class="terminal-output flex-grow overflow-y-auto leading-relaxed text-[#c9d1d9]"
+                                id="terminalOutput">
                                 <!-- Typewriter boot loader will inject content here -->
                             </div>
                             <div class="terminal-input-line flex items-center mt-3 pt-3 border-t border-white/5">
                                 <span class="text-primary font-bold mr-2">umang_os:~$</span>
-                                <input type="text" id="terminalInput" autofocus autocomplete="off" spellcheck="false" placeholder="Type 'help'..." class="bg-transparent border-none outline-none text-white font-mono text-xs flex-grow">
+                                <input type="text" id="terminalInput" autofocus autocomplete="off" spellcheck="false"
+                                    placeholder="Type 'help'..."
+                                    class="bg-transparent border-none outline-none text-white font-mono text-xs flex-grow">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center">
-                <a href="#skills-section" class="flex flex-col items-center gap-2 text-textMuted font-mono text-[10px] tracking-widest no-underline">
+                <a href="#skills-section"
+                    class="flex flex-col items-center gap-2 text-textMuted font-mono text-[10px] tracking-widest no-underline">
                     <span>SCROLL_DOWN_TO_BOOT</span>
                     <i class="fa-solid fa-angle-down text-lg animate-bounce"></i>
                 </a>
@@ -177,21 +232,27 @@
         </section>
 
         <!-- Section 01: About & Interactive Board Dashboard -->
-        <section id="skills-section" class="min-height-screen flex flex-col justify-center border-b border-borderCol py-24">
+        <section id="skills-section"
+            class="min-height-screen flex flex-col justify-center border-b border-borderCol py-24">
             <div class="section-header reveal-item mb-12">
-                <div class="sec-label font-mono text-[10px] text-secondary tracking-widest uppercase">SYS_DIAGNOSTIC</div>
+                <div class="sec-label font-mono text-[10px] text-secondary tracking-widest uppercase">SYS_DIAGNOSTIC
+                </div>
                 <h2 class="text-3xl font-bold text-white mt-2 flex items-center gap-2">
-                    <span class="text-primary font-mono text-2xl font-light">01.</span> Microcontroller Board Diagnostics
+                    <span class="text-primary font-mono text-2xl font-light">01.</span> Microcontroller Board
+                    Diagnostics
                 </h2>
                 <div class="h-[2px] bg-gradient-to-r from-primary via-borderCol to-transparent mt-3 w-full"></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
                 <!-- Board Visual (Interactive schematic of a microchip board) -->
-                <div class="board-container bg-gradient-to-b from-[#1b2635] to-[#0d121c] border border-borderCol rounded-lg p-10 flex justify-center items-center relative overflow-hidden min-h-[480px] reveal-item">
-                    <div class="board-substrate bg-[#0b1a0d] border-3 border-[#142a17] rounded-xl w-full max-w-[420px] h-[380px] relative shadow-[inset_0_0_30px_rgba(0,0,0,0.8),0_15px_40px_rgba(0,0,0,0.6)]">
+                <div
+                    class="board-container bg-gradient-to-b from-[#1b2635] to-[#0d121c] border border-borderCol rounded-lg p-10 flex justify-center items-center relative overflow-hidden min-h-[480px] reveal-item">
+                    <div
+                        class="board-substrate bg-[#0b1a0d] border-3 border-[#142a17] rounded-xl w-full max-w-[420px] h-[380px] relative shadow-[inset_0_0_30px_rgba(0,0,0,0.8),0_15px_40px_rgba(0,0,0,0.6)]">
                         <!-- Printed Circuit traces (SVG Overlay) -->
-                        <svg class="circuit-traces absolute inset-0 w-full h-full stroke-[#39ff14]/15 stroke-[1.5] fill-none" viewBox="0 0 500 500">
+                        <svg class="circuit-traces absolute inset-0 w-full h-full stroke-[#39ff14]/15 stroke-[1.5] fill-none"
+                            viewBox="0 0 500 500">
                             <!-- Trace lines -->
                             <path class="trace" d="M 50,50 L 150,50 L 150,150" />
                             <path class="trace" d="M 450,50 L 350,50 L 350,150" />
@@ -204,35 +265,40 @@
                         </svg>
 
                         <!-- Board Modules -->
-                        <div class="mcu-block cpu active absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-1/2 left-1/2 w-[110px] h-[110px] -translate-x-1/2 -translate-y-1/2 border-dashed border-borderCol hover:border-primary hover:text-white" data-module="cpu">
+                        <div class="mcu-block cpu active absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-1/2 left-1/2 w-[110px] h-[110px] -translate-x-1/2 -translate-y-1/2 border-dashed border-borderCol hover:border-primary hover:text-white"
+                            data-module="cpu">
                             <div class="module-guts flex flex-col items-center justify-center h-full p-2 text-center">
                                 <i class="fa-solid fa-microchip text-2xl mb-1 text-primary"></i>
                                 <span class="font-mono text-[9px] font-bold tracking-tight">ARM / RISC-V</span>
                             </div>
                         </div>
 
-                        <div class="mcu-block rtos absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-[15%] left-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white" data-module="rtos">
+                        <div class="mcu-block rtos absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-[15%] left-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white"
+                            data-module="rtos">
                             <div class="module-guts flex flex-col items-center justify-center h-full p-2 text-center">
                                 <i class="fa-solid fa-layer-group text-lg mb-1 text-primary"></i>
                                 <span class="font-mono text-[9px] font-bold tracking-tight">RTOS ENGINE</span>
                             </div>
                         </div>
 
-                        <div class="mcu-block protocols absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-[15%] right-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white" data-module="protocols">
+                        <div class="mcu-block protocols absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 top-[15%] right-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white"
+                            data-module="protocols">
                             <div class="module-guts flex flex-col items-center justify-center h-full p-2 text-center">
                                 <i class="fa-solid fa-network-wired text-lg mb-1 text-primary"></i>
                                 <span class="font-mono text-[9px] font-bold tracking-tight">PERIPHERALS</span>
                             </div>
                         </div>
 
-                        <div class="mcu-block debugger absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 bottom-[15%] left-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white" data-module="debugger">
+                        <div class="mcu-block debugger absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 bottom-[15%] left-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white"
+                            data-module="debugger">
                             <div class="module-guts flex flex-col items-center justify-center h-full p-2 text-center">
                                 <i class="fa-solid fa-bug-slash text-lg mb-1 text-primary"></i>
                                 <span class="font-mono text-[9px] font-bold tracking-tight">DEBUG & VAL</span>
                             </div>
                         </div>
 
-                        <div class="mcu-block build-env absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 bottom-[15%] right-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white" data-module="build-env">
+                        <div class="mcu-block build-env absolute bg-[#1a1a1a] border-2 border-[#333] rounded cursor-pointer transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.5)] z-10 bottom-[15%] right-[12%] w-[85px] h-[65px] hover:border-primary hover:text-white"
+                            data-module="build-env">
                             <div class="module-guts flex flex-col items-center justify-center h-full p-2 text-center">
                                 <i class="fa-solid fa-terminal text-lg mb-1 text-primary"></i>
                                 <span class="font-mono text-[9px] font-bold tracking-tight">BUILD & OS</span>
@@ -240,7 +306,8 @@
                         </div>
 
                         <!-- Connector pinouts (Top, bottom, sides) -->
-                        <div class="pin-strip pin-top absolute flex bg-[#444] top-0 left-[10%] right-[10%] h-[8px] justify-around">
+                        <div
+                            class="pin-strip pin-top absolute flex bg-[#444] top-0 left-[10%] right-[10%] h-[8px] justify-around">
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999] -mt-[4px]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999] -mt-[4px]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999] -mt-[4px]"></span>
@@ -250,7 +317,8 @@
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999] -mt-[4px]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999] -mt-[4px]"></span>
                         </div>
-                        <div class="pin-strip pin-bottom absolute flex bg-[#444] bottom-0 left-[10%] right-[10%] h-[8px] justify-around">
+                        <div
+                            class="pin-strip pin-bottom absolute flex bg-[#444] bottom-0 left-[10%] right-[10%] h-[8px] justify-around">
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999]"></span>
@@ -260,7 +328,8 @@
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999]"></span>
                             <span class="pin w-[6px] h-[12px] bg-[#ffd700] border border-[#999]"></span>
                         </div>
-                        <div class="pin-strip pin-left absolute flex bg-[#444] top-[10%] bottom-[10%] left-0 w-[8px] flex-col justify-around">
+                        <div
+                            class="pin-strip pin-left absolute flex bg-[#444] top-[10%] bottom-[10%] left-0 w-[8px] flex-col justify-around">
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999] -ml-[4px]"></span>
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999] -ml-[4px]"></span>
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999] -ml-[4px]"></span>
@@ -270,7 +339,8 @@
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999] -ml-[4px]"></span>
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999] -ml-[4px]"></span>
                         </div>
-                        <div class="pin-strip pin-right absolute flex bg-[#444] top-[10%] bottom-[10%] right-0 w-[8px] flex-col justify-around">
+                        <div
+                            class="pin-strip pin-right absolute flex bg-[#444] top-[10%] bottom-[10%] right-0 w-[8px] flex-col justify-around">
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999]"></span>
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999]"></span>
                             <span class="pin w-[12px] h-[6px] bg-[#ffd700] border border-[#999]"></span>
@@ -284,18 +354,21 @@
                 </div>
 
                 <!-- Diagnostics Dashboard Pane -->
-                <div class="board-diagnostic-pane bg-surface border border-borderCol rounded-lg p-8 flex flex-col justify-between reveal-item">
+                <div
+                    class="board-diagnostic-pane bg-surface border border-borderCol rounded-lg p-8 flex flex-col justify-between reveal-item">
                     <div class="diagnostic-header border-b border-borderCol pb-4 mb-4">
                         <div class="panel-tag font-mono text-[10px] text-secondary flex items-center gap-1.5 mb-2">
                             <i class="fa-solid fa-server"></i> TELEMETRY_PANEL
                         </div>
-                        <h3 id="diag-module-title" class="text-xl font-semibold text-white">ARM Core & SoC Architecture</h3>
+                        <h3 id="diag-module-title" class="text-xl font-semibold text-white">ARM Core & SoC Architecture
+                        </h3>
                     </div>
                     <div class="diagnostic-body">
                         <p id="diag-module-desc" class="text-textMuted text-sm mb-6 min-h-[70px] leading-relaxed">
-                            Experienced in register-level programming, interrupt management, memory map optimization, and hardware startup sequences for ARM Cortex-M microcontrollers.
+                            Experienced in register-level programming, interrupt management, memory map optimization,
+                            and hardware startup sequences for ARM Cortex-M microcontrollers.
                         </p>
-                        
+
                         <!-- Telemetry Stats (progress bars / items) -->
                         <div class="telemetry-dashboard flex flex-col gap-5 mb-6" id="diag-telemetry">
                             <!-- Injected dynamically based on active selection -->
@@ -304,8 +377,10 @@
                                     <span>ARM Assembly & C Coding</span>
                                     <span>90%</span>
                                 </div>
-                                <div class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
-                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]" style="width: 90%"></div>
+                                <div
+                                    class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
+                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]"
+                                        style="width: 90%"></div>
                                 </div>
                             </div>
                             <div class="telemetry-bar-item flex flex-col">
@@ -313,8 +388,10 @@
                                     <span>Interrupt Latency Optimization</span>
                                     <span>85%</span>
                                 </div>
-                                <div class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
-                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]" style="width: 85%"></div>
+                                <div
+                                    class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
+                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]"
+                                        style="width: 85%"></div>
                                 </div>
                             </div>
                             <div class="telemetry-bar-item flex flex-col">
@@ -322,19 +399,25 @@
                                     <span>Memory Mapping & Linker Scripts</span>
                                     <span>80%</span>
                                 </div>
-                                <div class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
-                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]" style="width: 80%"></div>
+                                <div
+                                    class="bar-container-inner h-1.5 bg-[#1f2735]/60 rounded-full overflow-hidden border border-white/5">
+                                    <div class="bar-fill h-full bg-gradient-to-r from-primary to-primary/40 shadow-[0_0_10px_var(--primary-glow)]"
+                                        style="width: 80%"></div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Real-time Oscilloscope Sim -->
-                        <div class="oscilloscope-container h-[110px] bg-[#040905] border border-[#142a17] rounded relative overflow-hidden p-2">
-                            <div class="osc-grid absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
+                        <div
+                            class="oscilloscope-container h-[110px] bg-[#040905] border border-[#142a17] rounded relative overflow-hidden p-2">
+                            <div
+                                class="osc-grid absolute inset-0 bg-[linear-gradient(rgba(57,255,20,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(57,255,20,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none">
+                            </div>
                             <svg class="osc-wave w-full h-full absolute inset-0" viewBox="0 0 400 100">
                                 <path id="oscPath" d="M 0,50 Q 50,0 100,50 T 200,50 T 300,50 T 400,50" />
                             </svg>
-                            <div class="osc-readout absolute bottom-1 left-2 right-2 flex justify-between font-mono text-[9px] text-[#39ff14] opacity-80">
+                            <div
+                                class="osc-readout absolute bottom-1 left-2 right-2 flex justify-between font-mono text-[9px] text-[#39ff14] opacity-80">
                                 <span>TRIG: CH1 [AUTO]</span>
                                 <span>TIME/DIV: 10ms</span>
                                 <span class="pulsing-text">SAMPLING...</span>
@@ -348,7 +431,8 @@
         <!-- Section 02: Projects Grid -->
         <section id="projects-section" class="py-24">
             <div class="section-header reveal-item mb-12">
-                <div class="sec-label font-mono text-[10px] text-secondary tracking-widest uppercase">REGISTERED_PROJECTS</div>
+                <div class="sec-label font-mono text-[10px] text-secondary tracking-widest uppercase">
+                    REGISTERED_PROJECTS</div>
                 <h2 class="text-3xl font-bold text-white mt-2 flex items-center gap-2">
                     <span class="text-primary font-mono text-2xl font-light">02.</span> Projects & Case Studies
                 </h2>
@@ -357,138 +441,223 @@
 
             <!-- Interactive Filter Controls -->
             <div class="filter-controls reveal-item flex justify-center gap-4 mb-12 flex-wrap">
-                <button class="filter-btn active font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary" data-filter="all">ALL_REPOS</button>
-                <button class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary" data-filter="rtos">RTOS_SYSTEMS</button>
-                <button class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary" data-filter="protocols">PROTOCOLS_DRIVERS</button>
-                <button class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary" data-filter="automation">AUTOMATION_VALIDATION</button>
+                <button
+                    class="filter-btn active font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary"
+                    data-filter="all">ALL_REPOS</button>
+                <button
+                    class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary"
+                    data-filter="rtos">RTOS_SYSTEMS</button>
+                <button
+                    class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary"
+                    data-filter="protocols">PROTOCOLS_DRIVERS</button>
+                <button
+                    class="filter-btn font-mono text-xs text-textMuted border border-borderCol px-4 py-2.5 rounded transition-all duration-300 hover:border-primary hover:text-primary"
+                    data-filter="automation">AUTOMATION_VALIDATION</button>
             </div>
 
             <!-- Projects Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1: ARM Performance & Validation -->
-                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]" data-category="automation">
-                    <div class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]"
+                    data-category="automation">
+                    <div
+                        class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
                     <div>
                         <div class="project-header flex justify-between items-center mb-5">
-                            <span class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v1.0.0</span>
+                            <span
+                                class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v1.0.0</span>
                             <i class="fa-solid fa-cubes text-lg text-primary"></i>
                         </div>
-                        <h3 class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">ARM Cortex-M Performance & Validation Framework</h3>
-                        
+                        <h3
+                            class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">
+                            ARM Cortex-M Performance & Validation Framework</h3>
+
                         <!-- Short Description -->
                         <p class="project-desc text-textMuted text-xs leading-relaxed mb-4">
-                            Benchmarking utilities in Embedded C and Python to measure interrupt latency, task switching, and memory utilization on ARM.
+                            Benchmarking utilities in Embedded C and Python to measure interrupt latency, task
+                            switching, and memory utilization on ARM.
                         </p>
-                        
+
                         <!-- Expandable Case Study Area (Phase 2 Custom Reveal) -->
                         <div class="card-expand overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
-                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Characterizing sub-microsecond latency jitter manually was highly inaccurate and blocked performance regressions analysis.</div>
-                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Programmed STM32 DWT registers for cycle-accurate profiling, aggregated outputs via Python parsing, and integrated into Jenkins CI pipelines.</div>
-                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Automated validation metrics, **reducing manual testing efforts by 40%** and securing firmware builds.</div>
+                            <div
+                                class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
+                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Characterizing
+                                    sub-microsecond latency jitter manually was highly inaccurate and blocked
+                                    performance regressions analysis.</div>
+                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Programmed STM32 DWT
+                                    registers for cycle-accurate profiling, aggregated outputs via Python parsing, and
+                                    integrated into Jenkins CI pipelines.</div>
+                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Automated validation
+                                    metrics, **reducing manual testing efforts by 40%** and securing firmware builds.
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-auto">
                         <ul class="project-tech-tags flex gap-1.5 flex-wrap list-none mb-5">
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Cortex-M</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Embedded C</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Python</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Automation</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Cortex-M</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Embedded C</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Python</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Automation</li>
                         </ul>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300" data-project="0">
+                            <a href="#"
+                                class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300"
+                                data-project="0">
                                 <i class="fa-solid fa-microchip mr-1"></i> INSPECT_REG
                             </a>
-                            <button class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
-                                <span>READ_CASE_STUDY</span> <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <button
+                                class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
+                                <span>READ_CASE_STUDY</span> <i
+                                    class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2: CAN Bus Vehicle Monitoring -->
-                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]" data-category="protocols">
-                    <div class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]"
+                    data-category="protocols">
+                    <div
+                        class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
                     <div>
                         <div class="project-header flex justify-between items-center mb-5">
-                            <span class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v0.8.2</span>
+                            <span
+                                class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v0.8.2</span>
                             <i class="fa-solid fa-car text-lg text-primary"></i>
                         </div>
-                        <h3 class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">CAN Bus-Based Vehicle Monitoring System</h3>
-                        
+                        <h3
+                            class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">
+                            CAN Bus-Based Vehicle Monitoring System</h3>
+
                         <!-- Short Description -->
                         <p class="project-desc text-textMuted text-xs leading-relaxed mb-4">
-                            Interrupt-driven firmware simulating distributed CAN-based ECU loop communication. Real-time priority arbiter filters.
+                            Interrupt-driven firmware simulating distributed CAN-based ECU loop communication. Real-time
+                            priority arbiter filters.
                         </p>
-                        
+
                         <!-- Expandable Case Study Area (Phase 2 Custom Reveal) -->
                         <div class="card-expand overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
-                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Developing simulated vehicular node diagnostics loops requiring microsecond accuracy and deterministic delivery.</div>
-                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Programmed STM32 bxCAN registers for hardware acceptance masks, structured lock-free RX ring buffers, and optimized mailbox priority.</div>
-                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Designed latency-optimized vehicular diagnostics bus maintaining zero frame loss under 95% load tests.</div>
+                            <div
+                                class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
+                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Developing simulated
+                                    vehicular node diagnostics loops requiring microsecond accuracy and deterministic
+                                    delivery.</div>
+                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Programmed STM32 bxCAN
+                                    registers for hardware acceptance masks, structured lock-free RX ring buffers, and
+                                    optimized mailbox priority.</div>
+                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Designed
+                                    latency-optimized vehicular diagnostics bus maintaining zero frame loss under 95%
+                                    load tests.</div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-auto">
                         <ul class="project-tech-tags flex gap-1.5 flex-wrap list-none mb-5">
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">CAN Bus</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">ECU Simulator</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Drivers</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">STM32</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                CAN Bus</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                ECU Simulator</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Drivers</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                STM32</li>
                         </ul>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300" data-project="1">
+                            <a href="#"
+                                class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300"
+                                data-project="1">
                                 <i class="fa-solid fa-microchip mr-1"></i> INSPECT_REG
                             </a>
-                            <button class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
-                                <span>READ_CASE_STUDY</span> <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <button
+                                class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
+                                <span>READ_CASE_STUDY</span> <i
+                                    class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3: RTOS Multi-Threaded Embedded System -->
-                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]" data-category="rtos">
-                    <div class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="project-card reveal-item group bg-surface border border-borderCol rounded-lg p-6 relative overflow-hidden flex flex-col justify-between min-h-[320px] transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_10px_20px_rgba(0,240,255,0.05)]"
+                    data-category="rtos">
+                    <div
+                        class="card-glow absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(0,240,255,0.08)_0%,transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
                     <div>
                         <div class="project-header flex justify-between items-center mb-5">
-                            <span class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v2.1.4</span>
+                            <span
+                                class="repo-badge font-mono text-[9px] text-textMuted bg-white/5 border border-borderCol px-2 py-0.5 rounded">v2.1.4</span>
                             <i class="fa-solid fa-arrows-spin text-lg text-primary"></i>
                         </div>
-                        <h3 class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">RTOS-Based Multi-Threaded System</h3>
-                        
+                        <h3
+                            class="project-title text-lg font-semibold text-white mb-3 group-hover:text-primary transition-colors">
+                            RTOS-Based Multi-Threaded System</h3>
+
                         <!-- Short Description -->
                         <p class="project-desc text-textMuted text-xs leading-relaxed mb-4">
-                            Pre-emptive FreeRTOS-based scheduler with tasks controlling SPI sensor reads, network data packetizing, and CLI shells.
+                            Pre-emptive FreeRTOS-based scheduler with tasks controlling SPI sensor reads, network data
+                            packetizing, and CLI shells.
                         </p>
-                        
+
                         <!-- Expandable Case Study Area (Phase 2 Custom Reveal) -->
                         <div class="card-expand overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
-                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Running multi-task loops on target SOCs with constrained memory limits without causing stack collision or priority deadlocks.</div>
-                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Configured priority-inheritance mutexes on FreeRTOS task schedules, traced watermarks, and built low-power scheduler tick hooks.</div>
-                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Created a highly stable preemptive driver core with optimized power efficiency and zero stack leaks.</div>
+                            <div
+                                class="border-t border-borderCol pt-3 mt-3 text-[11px] text-textMuted flex flex-col gap-2">
+                                <div><strong class="text-secondary font-mono">CHALLENGE:</strong> Running multi-task
+                                    loops on target SOCs with constrained memory limits without causing stack collision
+                                    or priority deadlocks.</div>
+                                <div><strong class="text-secondary font-mono">PROCESS:</strong> Configured
+                                    priority-inheritance mutexes on FreeRTOS task schedules, traced watermarks, and
+                                    built low-power scheduler tick hooks.</div>
+                                <div><strong class="text-secondary font-mono">OUTCOME:</strong> Created a highly stable
+                                    preemptive driver core with optimized power efficiency and zero stack leaks.</div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-auto">
                         <ul class="project-tech-tags flex gap-1.5 flex-wrap list-none mb-5">
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">FreeRTOS</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Concurrency</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Task Sched</li>
-                            <li class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">Low Power</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                FreeRTOS</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Concurrency</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Task Sched</li>
+                            <li
+                                class="font-mono text-[8px] text-secondary bg-secondary/5 border border-secondary/15 px-1.5 py-0.5 rounded">
+                                Low Power</li>
                         </ul>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300" data-project="2">
+                            <a href="#"
+                                class="project-link inspect-btn font-mono text-[10px] text-primary border-b border-transparent hover:border-primary transition-all duration-300"
+                                data-project="2">
                                 <i class="fa-solid fa-microchip mr-1"></i> INSPECT_REG
                             </a>
-                            <button class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
-                                <span>READ_CASE_STUDY</span> <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <button
+                                class="toggle-card-btn font-mono text-[10px] text-secondary hover:text-white flex items-center gap-1.5">
+                                <span>READ_CASE_STUDY</span> <i
+                                    class="fa-solid fa-chevron-down transition-transform duration-300"></i>
                             </button>
                         </div>
                     </div>
@@ -497,31 +666,42 @@
         </section>
 
         <!-- Project Detail Drawer Modal -->
-        <div class="project-drawer fixed top-0 right-0 w-full max-w-[800px] h-screen bg-[#0d1117]/98 border-l border-borderCol shadow-2xl z-[1000] transition-transform duration-400 ease-out translate-x-full flex flex-col" id="projectDrawer">
+        <div class="project-drawer fixed top-0 right-0 w-full max-w-[800px] h-screen bg-[#0d1117]/98 border-l border-borderCol shadow-2xl z-[1000] transition-transform duration-400 ease-out translate-x-full flex flex-col"
+            id="projectDrawer">
             <div class="drawer-content p-12 h-full overflow-y-auto flex flex-col relative">
-                <button class="close-drawer absolute top-6 right-8 bg-transparent border-none text-textMuted text-2xl cursor-pointer hover:text-accentRed transition-colors" aria-label="Close details"><i class="fa-solid fa-xmark"></i></button>
+                <button
+                    class="close-drawer absolute top-6 right-8 bg-transparent border-none text-textMuted text-2xl cursor-pointer hover:text-accentRed transition-colors"
+                    aria-label="Close details"><i class="fa-solid fa-xmark"></i></button>
                 <div class="drawer-header border-b border-borderCol pb-6 mb-8">
-                    <div class="drawer-tag font-mono text-xs text-secondary tracking-widest mb-2" id="drawerCategory">RTOS_SYSTEMS</div>
+                    <div class="drawer-tag font-mono text-xs text-secondary tracking-widest mb-2" id="drawerCategory">
+                        RTOS_SYSTEMS</div>
                     <h2 class="text-3xl font-bold text-white" id="drawerTitle">RTOS-Based Multi-Threaded System</h2>
                 </div>
                 <div class="drawer-body">
                     <div class="drawer-grid grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="drawer-info">
-                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Project Summary</h3>
-                            <p id="drawerDesc" class="text-textMuted text-sm mb-8 leading-relaxed">Detailed system summary goes here.</p>
-                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Key Architectures Implemented</h3>
+                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Project
+                                Summary</h3>
+                            <p id="drawerDesc" class="text-textMuted text-sm mb-8 leading-relaxed">Detailed system
+                                summary goes here.</p>
+                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Key
+                                Architectures Implemented</h3>
                             <ul id="drawerKeyFeatures" class="list-none pl-0">
                                 <!-- Injected by JS -->
                             </ul>
                         </div>
                         <div class="drawer-visual">
-                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Telemetry / Memory Maps</h3>
-                            <div class="firmware-code-box bg-[#0b0f15] border border-borderCol rounded-lg overflow-hidden mt-2">
-                                <div class="code-box-header bg-[#121820] px-4 py-2 flex justify-between items-center border-b border-borderCol font-mono text-[10px]">
+                            <h3 class="text-lg text-white mb-4 border-l-3 border-primary pl-2.5 font-bold">Telemetry /
+                                Memory Maps</h3>
+                            <div
+                                class="firmware-code-box bg-[#0b0f15] border border-borderCol rounded-lg overflow-hidden mt-2">
+                                <div
+                                    class="code-box-header bg-[#121820] px-4 py-2 flex justify-between items-center border-b border-borderCol font-mono text-[10px]">
                                     <span>main.c</span>
                                     <span class="status-indicator text-accentGreen">COMPILE_SUCCESS</span>
                                 </div>
-                                <pre class="p-5 font-mono text-xs text-[#a5d6ff] overflow-x-auto"><code id="drawerCode">// Loaded dynamically</code></pre>
+                                <pre
+                                    class="p-5 font-mono text-xs text-[#a5d6ff] overflow-x-auto"><code id="drawerCode">// Loaded dynamically</code></pre>
                             </div>
                         </div>
                     </div>
@@ -534,7 +714,8 @@
             <div class="section-header reveal-item mb-12">
                 <div class="sec-label font-mono text-[10px] text-secondary tracking-widest uppercase">STACK_TRACE</div>
                 <h2 class="text-3xl font-bold text-white mt-2 flex items-center gap-2">
-                    <span class="text-primary font-mono text-2xl font-light">03.</span> Firmware Execution Timeline (Trace Log)
+                    <span class="text-primary font-mono text-2xl font-light">03.</span> Firmware Execution Timeline
+                    (Trace Log)
                 </h2>
                 <div class="h-[2px] bg-gradient-to-r from-primary via-borderCol to-transparent mt-3 w-full"></div>
             </div>
@@ -542,75 +723,128 @@
             <div class="timeline-container max-w-4xl mx-auto relative pl-12">
                 <!-- Running vertical logic trace -->
                 <div class="timeline-track absolute left-[20px] top-[10px] bottom-[10px] w-[2px]">
-                    <div class="timeline-signal-line w-full h-full bg-gradient-to-b from-primary via-borderCol to-transparent relative"></div>
-                    <div class="timeline-head-probe absolute top-0 left-1/2 -translate-x-1/2 w-8 h-8 border border-primary bg-base rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_var(--primary-glow)] z-10"><i class="fa-solid fa-probe"></i></div>
+                    <div
+                        class="timeline-signal-line w-full h-full bg-gradient-to-b from-primary via-borderCol to-transparent relative">
+                    </div>
+                    <div
+                        class="timeline-head-probe absolute top-0 left-1/2 -translate-x-1/2 w-8 h-8 border border-primary bg-base rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_var(--primary-glow)] z-10">
+                        <i class="fa-solid fa-probe"></i></div>
                 </div>
 
                 <div class="timeline-events flex flex-col gap-12">
                     <!-- Event 1: Pretlist -->
                     <div class="timeline-item relative reveal-item">
-                        <div class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
+                        <div
+                            class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
                             <i class="fa-solid fa-microchip text-[10px] text-textMuted hover:text-primary"></i>
                         </div>
-                        <div class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
-                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JUNE 2026 - PRESENT</div>
+                        <div
+                            class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
+                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JUNE 2026 -
+                                PRESENT</div>
                             <h3 class="timeline-title text-lg font-bold text-white">Embedded Software Engineer</h3>
                             <h4 class="timeline-company text-primary font-medium mb-4">Pretlist</h4>
                             <ul class="timeline-details list-none pl-0">
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Developed embedded C firmware and peripheral/device drivers for target embedded platforms.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Performed system-level debugging and hardware-software integration involving MQTT and TCP/IP protocol communication.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Supported firmware validation, issue investigation, and root-cause analysis in Linux-based development environments.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Developed embedded C firmware and peripheral/device drivers for target embedded
+                                    platforms.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Performed system-level debugging and hardware-software integration involving MQTT
+                                    and TCP/IP protocol communication.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Supported firmware validation, issue investigation, and root-cause analysis in
+                                    Linux-based development environments.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Event 2: NXP Semiconductors -->
                     <div class="timeline-item relative reveal-item">
-                        <div class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
+                        <div
+                            class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
                             <i class="fa-solid fa-microchip text-[10px] text-textMuted hover:text-primary"></i>
                         </div>
-                        <div class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
-                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JULY 2025 - JUNE 2026</div>
-                            <h3 class="timeline-title text-lg font-bold text-white">Embedded Software Engineer Intern</h3>
+                        <div
+                            class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
+                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JULY 2025 - JUNE
+                                2026</div>
+                            <h3 class="timeline-title text-lg font-bold text-white">Embedded Software Engineer Intern
+                            </h3>
                             <h4 class="timeline-company text-primary font-medium mb-4">NXP Semiconductors</h4>
                             <ul class="timeline-details list-none pl-0">
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Developed and optimized low-level embedded firmware and device drivers for ARM Cortex-M microcontrollers, including interrupt handling, peripheral control, and register-level programming.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Participated in BSP integration, board bring-up, hardware initialization, and platform validation activities.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Debugged and validated SPI, I2C, UART, and CAN interfaces during HW-SW integration using Lauterbach (JTAG). Resolved memory corruption and hard faults.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Built Python-based automation and Jenkins CI validation frameworks, reducing manual testing effort by ~40%.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Developed and optimized low-level embedded firmware and device drivers for ARM
+                                    Cortex-M microcontrollers, including interrupt handling, peripheral control, and
+                                    register-level programming.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Participated in BSP integration, board bring-up, hardware initialization, and
+                                    platform validation activities.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Debugged and validated SPI, I2C, UART, and CAN interfaces during HW-SW integration
+                                    using Lauterbach (JTAG). Resolved memory corruption and hard faults.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Built Python-based automation and Jenkins CI validation frameworks, reducing manual
+                                    testing effort by ~40%.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Event 3: DRDO -->
                     <div class="timeline-item relative reveal-item">
-                        <div class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
+                        <div
+                            class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
                             <i class="fa-solid fa-shield-halved text-[10px] text-textMuted hover:text-primary"></i>
                         </div>
-                        <div class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
-                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JULY 2023 - AUGUST 2023</div>
+                        <div
+                            class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
+                            <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">JULY 2023 -
+                                AUGUST 2023</div>
                             <h3 class="timeline-title text-lg font-bold text-white">Research Intern</h3>
-                            <h4 class="timeline-company text-primary font-medium mb-4">DRDO (Defence Research and Development Organisation)</h4>
+                            <h4 class="timeline-company text-primary font-medium mb-4">DRDO (Defence Research and
+                                Development Organisation)</h4>
                             <ul class="timeline-details list-none pl-0">
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Designed and simulated RF and analog circuits using Advanced Design System (ADS) platform.</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Performed high-frequency validation of electronic modules.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Designed and simulated RF and analog circuits using Advanced Design System (ADS)
+                                    platform.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Performed high-frequency validation of electronic modules.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Event 4: Education -->
                     <div class="timeline-item relative reveal-item">
-                        <div class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
+                        <div
+                            class="timeline-marker absolute -left-[51px] top-[5px] w-[22px] h-[22px] rounded-full bg-base border-2 border-borderCol flex items-center justify-center z-[2] transition-colors duration-300 hover:border-primary hover:shadow-[0_0_8px_var(--primary-glow)]">
                             <i class="fa-solid fa-graduation-cap text-[10px] text-textMuted hover:text-primary"></i>
                         </div>
-                        <div class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
+                        <div
+                            class="timeline-content bg-surface border border-borderCol rounded-lg p-6 hover:border-secondary/35 transition-colors">
                             <div class="timeline-date font-mono text-xs text-secondary font-bold mb-2">2020 - 2026</div>
                             <h3 class="timeline-title text-lg font-bold text-white">Academic Credentials</h3>
-                            <h4 class="timeline-company text-primary font-medium mb-4">Master & Bachelor of Technology</h4>
+                            <h4 class="timeline-company text-primary font-medium mb-4">Master & Bachelor of Technology
+                            </h4>
                             <ul class="timeline-details list-none pl-0">
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5"><strong>M.Tech, Communication System Engineering (ECE)</strong> - National Institute of Technology Jamshedpur (2024-2026) | CGPA: 8.77</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5"><strong>B.Tech, Electronics & Communication Engineering</strong> - Dr APJ Abdul Kalam Technical University, Lucknow (2020-2024) | CGPA: 7.61</li>
-                                <li class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">Qualified GATE 2024 in Electronics and Communication Engineering.</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    <strong>M.Tech, Communication System Engineering (ECE)</strong> - National Institute
+                                    of Technology Jamshedpur (2024-2026) | CGPA: 8.77</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    <strong>B.Tech, Electronics & Communication Engineering</strong> - Dr APJ Abdul
+                                    Kalam Technical University, Lucknow (2020-2024) | CGPA: 7.61</li>
+                                <li
+                                    class="text-sm text-textMuted mb-2 relative pl-5 before:content-['•'] before:text-secondary before:absolute before:left-0 before:text-lg before:-top-0.5">
+                                    Qualified GATE 2024 in Electronics and Communication Engineering.</li>
                             </ul>
                         </div>
                     </div>
@@ -630,29 +864,39 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Form Area -->
-                <div class="contact-form-container bg-surface border border-borderCol rounded-lg p-10 relative reveal-item">
+                <div
+                    class="contact-form-container bg-surface border border-borderCol rounded-lg p-10 relative reveal-item">
                     <form id="telemetryForm" class="telemetry-form flex flex-col gap-6">
                         <div class="form-row grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="form-group flex flex-col">
-                                <label for="senderName" class="font-mono text-xs text-[#e2e8f0] mb-2"><span class="text-primary">#define</span> SENDER_NAME</label>
-                                <input type="text" id="senderName" required placeholder='"Your Name"' class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all">
+                                <label for="senderName" class="font-mono text-xs text-[#e2e8f0] mb-2"><span
+                                        class="text-primary">#define</span> SENDER_NAME</label>
+                                <input type="text" id="senderName" required placeholder='"Your Name"'
+                                    class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all">
                             </div>
                             <div class="form-group flex flex-col">
-                                <label for="senderEmail" class="font-mono text-xs text-[#e2e8f0] mb-2"><span class="text-primary">#define</span> COMMS_CHANNEL</label>
-                                <input type="email" id="senderEmail" required placeholder='"your@email.com"' class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all">
+                                <label for="senderEmail" class="font-mono text-xs text-[#e2e8f0] mb-2"><span
+                                        class="text-primary">#define</span> COMMS_CHANNEL</label>
+                                <input type="email" id="senderEmail" required placeholder='"your@email.com"'
+                                    class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all">
                             </div>
                         </div>
                         <div class="form-group flex flex-col">
-                            <label for="payloadData" class="font-mono text-xs text-[#e2e8f0] mb-2"><span class="text-primary">uint8_t</span> PAYLOAD_DATA[] =</label>
-                            <textarea id="payloadData" rows="6" required placeholder='"Type message here... Let&#39;s collaborate on firmware!"' class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all"></textarea>
+                            <label for="payloadData" class="font-mono text-xs text-[#e2e8f0] mb-2"><span
+                                    class="text-primary">uint8_t</span> PAYLOAD_DATA[] =</label>
+                            <textarea id="payloadData" rows="6" required
+                                placeholder='"Type message here... Let&#39;s collaborate on firmware!"'
+                                class="bg-base border border-borderCol rounded p-3 text-white font-mono text-xs outline-none focus:border-primary focus:shadow-[0_0_10px_rgba(0,240,255,0.15)] transition-all"></textarea>
                         </div>
-                        <button type="submit" class="btn-primary form-submit-btn font-mono text-xs text-primary border border-primary px-6 py-3.5 rounded self-start hover:bg-primary hover:text-base transition-all duration-300">
+                        <button type="submit"
+                            class="btn-primary form-submit-btn font-mono text-xs text-primary border border-primary px-6 py-3.5 rounded self-start hover:bg-primary hover:text-base transition-all duration-300">
                             <i class="fa-solid fa-paper-plane mr-1.5"></i> TRANSMIT_PACKET
                         </button>
                     </form>
 
                     <!-- Form Send Status Indicator -->
-                    <div class="form-status absolute inset-0 bg-[#0d1117]/92 flex-col items-center justify-center gap-4 rounded-lg z-15 font-mono text-sm text-primary hidden" id="formStatus">
+                    <div class="form-status absolute inset-0 bg-[#0d1117]/92 flex-col items-center justify-center gap-4 rounded-lg z-15 font-mono text-sm text-primary hidden"
+                        id="formStatus">
                         <div class="status-icon text-3xl"><i class="fa-solid fa-spinner fa-spin"></i></div>
                         <div class="status-msg">TRANSMITTING PACKETS VIA UART COM4...</div>
                     </div>
@@ -661,7 +905,9 @@
                 <!-- Hardware Interface details -->
                 <div class="contact-telemetry-meta flex flex-col gap-6 reveal-item">
                     <div class="meta-box bg-surface border border-borderCol rounded-lg p-6">
-                        <h3 class="text-sm text-white mb-4 flex items-center gap-2 border-b border-borderCol pb-2"><i class="fa-solid fa-tower-broadcast text-secondary"></i> System Connection Parameters</h3>
+                        <h3 class="text-sm text-white mb-4 flex items-center gap-2 border-b border-borderCol pb-2"><i
+                                class="fa-solid fa-tower-broadcast text-secondary"></i> System Connection Parameters
+                        </h3>
                         <div class="params-list flex flex-col gap-2.5">
                             <div class="param-item flex justify-between font-mono text-xs">
                                 <span class="p-name text-textMuted">PROTOCOL</span>
@@ -686,17 +932,25 @@
                         </div>
                     </div>
 
-                    <div class="network-analyzer bg-[#050608] border border-borderCol rounded-lg p-5 flex flex-col gap-3">
-                        <div class="analyzer-screen h-[90px] bg-[#020b0c] border border-[#143235] rounded relative overflow-hidden flex items-center px-4">
-                            <div class="screen-grid absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.04)_1px,transparent_1px)] bg-[size:15px_15px] pointer-events-none"></div>
-                            <div class="bitstream font-mono text-xs text-primary tracking-widest w-full whitespace-nowrap overflow-hidden text-clip opacity-80" id="bitStream">
+                    <div
+                        class="network-analyzer bg-[#050608] border border-borderCol rounded-lg p-5 flex flex-col gap-3">
+                        <div
+                            class="analyzer-screen h-[90px] bg-[#020b0c] border border-[#143235] rounded relative overflow-hidden flex items-center px-4">
+                            <div
+                                class="screen-grid absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.04)_1px,transparent_1px)] bg-[size:15px_15px] pointer-events-none">
+                            </div>
+                            <div class="bitstream font-mono text-xs text-primary tracking-widest w-full whitespace-nowrap overflow-hidden text-clip opacity-80"
+                                id="bitStream">
                                 01001100010011110100000101000100010010010100111001000111
                             </div>
                         </div>
                         <div class="analyzer-labels flex gap-6 font-mono text-[10px] text-textMuted">
-                            <span class="flex items-center gap-1.5">RXD <span class="led w-1.5 h-1.5 rounded-full bg-[#333]" id="rxLed"></span></span>
-                            <span class="flex items-center gap-1.5">TXD <span class="led w-1.5 h-1.5 rounded-full bg-[#333]" id="txLed"></span></span>
-                            <span class="flex items-center gap-1.5">ERR <span class="led red w-1.5 h-1.5 rounded-full bg-accentRed"></span></span>
+                            <span class="flex items-center gap-1.5">RXD <span
+                                    class="led w-1.5 h-1.5 rounded-full bg-[#333]" id="rxLed"></span></span>
+                            <span class="flex items-center gap-1.5">TXD <span
+                                    class="led w-1.5 h-1.5 rounded-full bg-[#333]" id="txLed"></span></span>
+                            <span class="flex items-center gap-1.5">ERR <span
+                                    class="led red w-1.5 h-1.5 rounded-full bg-accentRed"></span></span>
                         </div>
                     </div>
                 </div>
@@ -707,17 +961,27 @@
     <!-- Footer -->
     <footer class="bg-[#06080b] border-t border-borderCol py-8">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center flex-wrap gap-4">
-            <p class="copyright text-sm text-textMuted">&copy; 2026 Umang Mishra. All rights reserved. System powered by Umang_OS_v2.0.</p>
+            <p class="copyright text-sm text-textMuted">&copy; 2026 Umang Mishra. All rights reserved. System powered by
+                Umang_OS_v2.0.</p>
             <div class="footer-socials flex gap-6">
-                <a href="mailto:umangmishra392@gmail.com" title="Email" target="_blank" class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/umangmishra" title="LinkedIn" target="_blank" class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="tel:+919650870928" title="Phone" class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:umangmishra392@gmail.com" title="Email" target="_blank"
+                    class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i
+                        class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/umangmishra392" title="LinkedIn" target="_blank"
+                    class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="tel:+919650870928" title="Phone"
+                    class="text-textMuted text-lg hover:text-primary hover:shadow-[0_0_6px_var(--primary-glow)] transition-colors"><i
+                        class="fa-solid fa-phone"></i></a>
             </div>
-            <div class="footer-checksum font-mono text-[10px] text-textMuted bg-white/2 px-2 py-1 border border-white/5 rounded">SHA256: 9E107D9D372BB6826BD81D3542A419D6</div>
+            <div
+                class="footer-checksum font-mono text-[10px] text-textMuted bg-white/2 px-2 py-1 border border-white/5 rounded">
+                SHA256: 9E107D9D372BB6826BD81D3542A419D6</div>
         </div>
     </footer>
-    
+
     <!-- JavaScript file -->
     <script src="script.js"></script>
 </body>
+
 </html>

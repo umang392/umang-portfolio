@@ -206,7 +206,7 @@ function initSignalBackground() {
             const rawSine = Math.sin(x * 0.005 - phase);
             // Translate sine signal to clean square pulses (Logic High / Low states)
             const yOffset = rawSine >= 0 ? 15 : -15;
-            
+
             if (x === 0) {
                 ctx.moveTo(x, lineY + yOffset);
             } else {
@@ -247,7 +247,7 @@ const CLI_RESPONSES = {
   resume    - Download GET_RESUME.BIN.
   clear     - Wipe console buffers.
   help      - Print this listing details.`,
-    
+
     about: `Umang Mishra - Embedded Firmware Engineer
 ----------------------------------------
 Specializing in low-level driver development, RTOS board bring-up, 
@@ -255,7 +255,7 @@ and hardware-software co-validation. Hands-on experience developing
 critical firmware for automotive chips (NXP) and commercial IoT (Pretlist).
 Holds an M.Tech from NIT Jamshedpur (CGPA 8.77) and B.Tech in Electronics.
 A passionate hardware enthusiast with deep interest in SoC validation.`,
-    
+
     skills: `Peripherals & System Registries:
 ----------------------------------------
 * Programming: Embedded C, C++, Python, Assembly
@@ -263,7 +263,7 @@ A passionate hardware enthusiast with deep interest in SoC validation.`,
 * SoC Cores: ARM Cortex-M (STM32, NXP LPC), RISC-V Cores
 * Protocols: SPI, I2C, UART, CAN Bus, TCP/IP, MQTT, GPIO, Timers
 * Debug/Test: Lauterbach Trace32 JTAG, GDB, logic analyzers, Oscilloscopes`,
-    
+
     projects: `Compiled Projects:
 ----------------------------------------
 1. ARM Cortex-M Performance Framework
@@ -273,14 +273,14 @@ A passionate hardware enthusiast with deep interest in SoC validation.`,
 3. FreeRTOS Multi-threaded Subsystem
    - Pre-emptive task synchronization module.
 Type 'inspect [0|1|2]' or click project cards below for telemetry maps.`,
-    
+
     contact: `Comm Transceiver Channels:
 ----------------------------------------
 * Email: umangmishra392@gmail.com
 * Phone: +919650870928
-* LinkedIn: linkedin.com/in/umangmishra
+* LinkedIn: linkedin.com/in/umangmishra392
 Type 'submit' to jump to form transmission terminal.`,
-    
+
     resume: `Triggering download download... GET_RESUME.BIN [OK]`
 };
 
@@ -295,7 +295,7 @@ function initTerminalBoot() {
         if (index < BOOT_SEQUENCE.length) {
             const line = BOOT_SEQUENCE[index];
             const p = document.createElement("p");
-            
+
             if (line.type === "success") p.style.color = "var(--accentGreen)";
             else if (line.type === "info") p.style.color = "var(--primary)";
             else if (line.type === "warning") p.style.color = "var(--secondary)";
@@ -304,7 +304,7 @@ function initTerminalBoot() {
             p.textContent = line.text;
             outputDiv.appendChild(p);
             outputDiv.scrollTop = outputDiv.scrollHeight;
-            
+
             index++;
             setTimeout(typeNextLine, line.delay);
         } else {
@@ -320,7 +320,7 @@ function initTerminalBoot() {
         if (e.key === "Enter") {
             const cmdText = inputField.value.trim().toLowerCase();
             inputField.value = "";
-            
+
             if (!cmdText) return;
 
             const echoP = document.createElement("p");
@@ -385,10 +385,10 @@ function processCommand(command, outputElement) {
 
 function triggerResumeDownload() {
     const link = document.createElement("a");
-    link.href = "#"; 
+    link.href = "#";
     link.download = "Umang_Mishra_Resume.pdf";
     document.body.appendChild(link);
-    
+
     const overlay = document.createElement("div");
     overlay.style.cssText = "position:fixed;bottom:20px;right:20px;background:var(--surface);border:1px solid var(--accentGreen);padding:1rem;border-radius:4px;z-index:1000;box-shadow:0 0 10px var(--accentGreen);font-family:monospace;font-size:0.8rem;";
     overlay.innerHTML = "<span style='color:var(--accentGreen)'>[SUCCESS]</span> GET_RESUME.BIN successfully transmitted via browser pipeline.";
@@ -505,7 +505,7 @@ function animateOscilloscope(getWaveType) {
     if (!oscPath) return;
 
     let time = 0;
-    
+
     function run() {
         time += 0.15;
         const waveType = getWaveType();
@@ -514,7 +514,7 @@ function animateOscilloscope(getWaveType) {
         for (let x = 0; x <= 400; x += 5) {
             let y = 50;
             const phase = x * 0.05 - time;
-            
+
             if (waveType === "sine") {
                 y = 50 + Math.sin(phase) * 30;
             } else if (waveType === "square") {
@@ -577,7 +577,7 @@ function initProjectFilter() {
    ========================================================================== */
 function initCardExpansion() {
     const toggleButtons = document.querySelectorAll(".toggle-card-btn");
-    
+
     toggleButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const card = btn.closest(".project-card");
@@ -586,7 +586,7 @@ function initCardExpansion() {
             const labelText = btn.querySelector("span");
 
             expandArea.classList.toggle("expanded");
-            
+
             if (expandArea.classList.contains("expanded")) {
                 chevron.style.transform = "rotate(180deg)";
                 labelText.textContent = "COLLAPSE";
@@ -792,8 +792,8 @@ function initContactEmailJS() {
 
     // Initialize EmailJS with placeholder user public key.
     // Replace with your real EmailJS Public Key in production
-    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY"; 
-    
+    const EMAILJS_PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
+
     // Check if public key is updated, otherwise run simulation
     const isMock = (EMAILJS_PUBLIC_KEY === "YOUR_EMAILJS_PUBLIC_KEY");
     if (!isMock) {
@@ -836,7 +836,7 @@ function initContactEmailJS() {
                     <div class="status-icon" style="color:var(--secondary)"><i class="fa-solid fa-server fa-bounce"></i></div>
                     <div class="status-msg">SENDING COMMS PAYLOAD TO MAILSERVER...</div>
                 `;
-                
+
                 setTimeout(() => {
                     statusDiv.innerHTML = `
                         <div class="status-icon text-accentGreen"><i class="fa-solid fa-square-check"></i></div>
