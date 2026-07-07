@@ -1,0 +1,174 @@
+/* ==========================================================================
+   UMANG MISHRA PORTFOLIO AUXILIARY STYLING & ANIMATIONS
+   Complements Tailwind CSS for custom embedded UI graphics,
+   custom cursors, interactive boards, and keyframes.
+   ========================================================================== */
+
+/* --- Custom Cursor --- */
+#custom-cursor {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--primary);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    box-shadow: 0 0 5px var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Custom Cursor States */
+.cursor-hover #custom-cursor {
+    width: 44px;
+    height: 44px;
+    border-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(255, 159, 0, 0.4);
+    background-color: rgba(255, 159, 0, 0.05);
+}
+
+.cursor-hover #custom-cursor-dot {
+    background-color: var(--secondary);
+    box-shadow: 0 0 8px var(--secondary);
+}
+
+/* Hide standard cursor on non-touch devices */
+@media (pointer: fine) {
+    body, a, button, input, textarea, select, [role="button"], .mcu-block {
+        cursor: none !important;
+    }
+}
+
+/* --- Scroll Reveal System --- */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Interactive MCU Board Visuals (PCB substrate) --- */
+.board-substrate {
+    background-color: #0b1a0d; /* PCB green */
+    border: 3px solid #142a17;
+}
+
+.trace {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawTrace 3s forwards ease-in-out;
+}
+
+@keyframes drawTrace {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Glow effects for active board chips */
+.mcu-block.active {
+    border-color: #00f0ff !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.2);
+    background-color: #111 !important;
+}
+
+.mcu-block.active .module-guts i {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+/* --- Oscilloscope waveform screens --- */
+.oscilloscope-container {
+    background-color: #040905;
+}
+
+#oscPath {
+    stroke: #39ff14;
+    stroke-width: 2.5;
+    fill: none;
+    filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.8));
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.pulsing-text {
+    animation: pulseText 1.5s infinite;
+}
+
+/* --- Experience logic waveform connector timeline trace --- */
+.timeline-signal-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(0, 240, 255, 0) 0%, 
+        #00f0ff 20%, 
+        #ff9f00 50%, 
+        #39ff14 80%, 
+        rgba(57, 255, 20, 0) 100%);
+    background-size: 100% 200%;
+    animation: signalFlow 4s linear infinite;
+}
+
+@keyframes signalFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% -200%; }
+}
+
+/* --- Telemetry status send screens --- */
+.form-status {
+    backdrop-filter: blur(8px);
+}
+
+/* --- Custom animations --- */
+@keyframes statusBlink {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.status-pulse {
+    animation: statusBlink 1.2s infinite alternate;
+}
+
+/* Custom expand transition for cards */
+.card-expand {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease, margin-top 0.3s ease;
+    opacity: 0;
+}
+
+.card-expand.expanded {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+/* Custom scroll snaps and section spacings */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Ambient hero mesh details */
+#heroParticles {
+    pointer-events: none;
+}
