@@ -801,14 +801,14 @@ function openDrawer(id) {
     });
 
     drawerCode.textContent = data.code;
-    drawer.style.transform = "translateX(0%)";
+    drawer.classList.add("open");
     document.body.style.overflow = "hidden";
 }
 
 function closeDrawer() {
     const drawer = document.getElementById("projectDrawer");
     if (!drawer) return;
-    drawer.style.transform = "translateX(100%)";
+    drawer.classList.remove("open");
     document.body.style.overflow = "";
 }
 
