@@ -4,40 +4,144 @@
    custom cursors, interactive boards, and keyframes.
    ========================================================================== */
 
+:root {
+    --primary: #00f0ff;      /* Cyan */
+    --secondary: #ff9f00;    /* Amber/Orange */
+    --accent-green: #39ff14; /* Lime green */
+    --accent-red: #ff3b30;   /* Bright red */
+    --text-muted: #8a99ad;
+    --border-col: #1f2735;
+}
+
 /* --- Custom Cursor --- */
 #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-ring {
     width: 24px;
     height: 24px;
-    border: 1.5px solid var(--primary);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Add tick marks for hardware reticle effect */
+.cursor-ring::before,
+.cursor-ring::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primary);
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Horizontal tick marks */
+.cursor-ring::before {
+    top: 50%;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: 2px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, var(--primary) 0px, var(--primary) 3px, transparent 3px, transparent calc(100% - 3px), var(--primary) calc(100% - 3px));
+}
+
+/* Vertical tick marks */
+.cursor-ring::after {
+    left: 50%;
+    top: -4px;
+    width: 2px;
+    height: calc(100% + 8px);
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, var(--primary) 0px, var(--primary) 3px, transparent 3px, transparent calc(100% - 3px), var(--primary) calc(100% - 3px));
 }
 
 #custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 6px;
     height: 6px;
     background-color: var(--primary);
-    box-shadow: 0 0 5px var(--primary);
+    box-shadow: 0 0 8px var(--primary);
     border-radius: 50%;
-    transform: translate(-50%, -50%);
     pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 /* Custom Cursor States */
-.cursor-hover #custom-cursor {
+.cursor-hover .cursor-ring {
     width: 44px;
     height: 44px;
     border-color: var(--secondary);
-    box-shadow: 0 0 15px rgba(255, 159, 0, 0.4);
-    background-color: rgba(255, 159, 0, 0.05);
+    box-shadow: 0 0 18px rgba(255, 159, 0, 0.6);
+    background-color: rgba(255, 159, 0, 0.08);
+    animation: rotateReticle 8s linear infinite;
+}
+
+.cursor-hover .cursor-ring::before {
+    background: linear-gradient(90deg, var(--secondary) 0px, var(--secondary) 4px, transparent 4px, transparent calc(100% - 4px), var(--secondary) calc(100% - 4px));
+}
+
+.cursor-hover .cursor-ring::after {
+    background: linear-gradient(180deg, var(--secondary) 0px, var(--secondary) 4px, transparent 4px, transparent calc(100% - 4px), var(--secondary) calc(100% - 4px));
 }
 
 .cursor-hover #custom-cursor-dot {
     background-color: var(--secondary);
-    box-shadow: 0 0 8px var(--secondary);
+    box-shadow: 0 0 12px var(--secondary);
+    width: 8px;
+    height: 8px;
+}
+
+/* Clicked State */
+.cursor-clicked .cursor-ring {
+    width: 18px;
+    height: 18px;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 12px var(--accent-red);
+    background-color: rgba(255, 59, 48, 0.15);
+}
+
+.cursor-clicked .cursor-ring::before {
+    background: linear-gradient(90deg, var(--accent-red) 0px, var(--accent-red) 3px, transparent 3px, transparent calc(100% - 3px), var(--accent-red) calc(100% - 3px));
+}
+
+.cursor-clicked .cursor-ring::after {
+    background: linear-gradient(180deg, var(--accent-red) 0px, var(--accent-red) 3px, transparent 3px, transparent calc(100% - 3px), var(--accent-red) calc(100% - 3px));
+}
+
+.cursor-clicked #custom-cursor-dot {
+    background-color: var(--accent-red);
+    box-shadow: 0 0 10px var(--accent-red);
+    width: 4px;
+    height: 4px;
+}
+
+@keyframes rotateReticle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* Hide standard cursor on non-touch devices */
