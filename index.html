@@ -54,12 +54,10 @@
 
 <body class="bg-base text-[#e2e8f0] font-sans overflow-x-hidden firmware-theme">
     <!-- Custom animated cursor -->
-    <div id="custom-cursor"
-        class="pointer-events-none fixed top-0 left-0 w-6 height-6 rounded-full border border-primary mix-blend-difference z-[9999] transition-transform duration-100 ease-out -translate-x-1/2 -translate-y-1/2">
+    <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 z-[9999]">
+        <div class="cursor-ring"></div>
     </div>
-    <div id="custom-cursor-dot"
-        class="pointer-events-none fixed top-0 left-0 w-2 height-2 rounded-full bg-primary z-[9999] -translate-x-1/2 -translate-y-1/2">
-    </div>
+    <div id="custom-cursor-dot" class="pointer-events-none fixed top-0 left-0 z-[9999]"></div>
 
     <!-- Background Logic Waveform Canvas -->
     <canvas id="signalCanvas"

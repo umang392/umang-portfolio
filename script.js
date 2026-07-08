@@ -28,27 +28,61 @@ function initCustomCursor() {
     let targetX = 0, targetY = 0;
     let cursorX = 0, cursorY = 0;
     let dotX = 0, dotY = 0;
+    let hasMoved = false;
 
     document.addEventListener("mousemove", (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
+        
+        if (!hasMoved) {
+            // Instantly snap to first position to avoid transition slide-in from (0,0)
+            cursorX = targetX;
+            cursorY = targetY;
+            dotX = targetX;
+            dotY = targetY;
+            hasMoved = true;
+            cursor.style.opacity = "1";
+            dot.style.opacity = "1";
+        }
     });
 
     // Smooth cursor follow delay (Lerp)
     function animateCursor() {
-        // Lerp for outer ring
-        cursorX += (targetX - cursorX) * 0.15;
-        cursorY += (targetY - cursorY) * 0.15;
-        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+        if (hasMoved) {
+            // Lerp for outer ring
+            cursorX += (targetX - cursorX) * 0.15;
+            cursorY += (targetY - cursorY) * 0.15;
+            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
 
-        // Lerp for inner dot (slightly faster)
-        dotX += (targetX - dotX) * 0.35;
-        dotY += (targetY - dotY) * 0.35;
-        dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+            // Lerp for inner dot (slightly faster)
+            dotX += (targetX - dotX) * 0.35;
+            dotY += (targetY - dotY) * 0.35;
+            dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+        }
 
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
+
+    // Fade out when leaving the document viewport, fade back in when entering
+    document.addEventListener("mouseleave", () => {
+        cursor.style.opacity = "0";
+        dot.style.opacity = "0";
+    });
+    document.addEventListener("mouseenter", () => {
+        if (hasMoved) {
+            cursor.style.opacity = "1";
+            dot.style.opacity = "1";
+        }
+    });
+
+    // Click feedback transitions
+    document.addEventListener("mousedown", () => {
+        document.body.classList.add("cursor-clicked");
+    });
+    document.addEventListener("mouseup", () => {
+        document.body.classList.remove("cursor-clicked");
+    });
 
     // Hover effect trackers on interactive items
     const interactives = document.querySelectorAll("a, button, input, textarea, .mcu-block, .toggle-card-btn, .inspect-btn");
@@ -233,7 +267,7 @@ const BOOT_SEQUENCE = [
     { text: "Connecting JTAG Debug trace probe... Lauterbach Trace32 Ready", delay: 300, type: "info" },
     { text: "==================================================", delay: 100, type: "system" },
     { text: "WELCOME TO UMANG_OS. SYSTEM BOOT COMPLETED SUCCESSFUL.", delay: 300, type: "success" },
-    { text: "Umang Mishra - Elite Embedded Firmware Engineer.", delay: 200, type: "info" },
+    { text: "Umang Mishra - Embedded Firmware Engineer.", delay: 200, type: "info" },
     { text: "Type 'help' to query firmware command registers.", delay: 100, type: "warning" },
     { text: "==================================================", delay: 100, type: "system" }
 ];
